@@ -1,0 +1,10 @@
+<h2><%= @restaurant.name %></h2>
+<ul class="list-group">
+<li class="list-group-item"><%= @restaurant.name %>
+<li class="list-group-item"><%= @restaurant.category %>
+<li class="list-group-item"><%= @restaurant.address %>
+<li class="list-group-item"><%= @restaurant.phone_number %>
+<li class="list-group-item">
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %> |
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>

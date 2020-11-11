@@ -14,9 +14,12 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.save
-
-    redirect_to restaurant_path(@restaurant)
+    
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :new
+    end
   end
   
   def edit
@@ -35,6 +38,8 @@ class RestaurantsController < ApplicationController
     # no need for app/views/restaurants/destroy.html.erb
     redirect_to restaurants_path
   end
+
+
   private
 
   def restaurant_params
